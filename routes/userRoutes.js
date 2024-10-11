@@ -30,8 +30,4 @@ router.route("/current-user").get(verifyJWT , getCurrentUser)
 router.route("/update-account").patch(verifyJWT , updateAccountDetails)
 
 
-
-
-
-
 export default router
