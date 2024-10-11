@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "A backend for smart car parking system in mern  ",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon -r dotenv/config --experimental-json-modules index.js"
   },
   "keywords": [
     "MongoDb",
@@ -14,5 +15,17 @@
     "Mongoose"
   ],
   "author": "Utkarsh Upadhyay",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.7",
+    "prettier": "^3.3.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mogodb": "^0.0.1-security",
+    "mongodb": "^6.9.0",
+    "mongoose": "^8.7.1"
+  }
 }
