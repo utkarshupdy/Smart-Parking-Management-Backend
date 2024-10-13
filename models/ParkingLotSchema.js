@@ -3,17 +3,17 @@ import mongoose from 'mongoose';
 const parkingLotSchema = new mongoose.Schema({
     isSlotBooked: {
         type: Boolean,
-        default: false 
+        default: false  
     },
-    parking: {  // parking_id renamed for clarity
+    parking: { 
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Parking', 
+        ref: 'Parking',
         required: true
     },
-    user: {
+    user: { 
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     }
 });
 
-export default mongoose.model("ParkingLot", parkingLotSchema);
+export default mongoose.model('ParkingLot', parkingLotSchema);

@@ -26,9 +26,16 @@ app.use(cookieParser())
 
 
  import userRouter from './routes/userRoutes.js' 
+ import parkingRouter from './routes/parkingRoutes.js'
+ import bookingRouter from './routes/bookingRoutes.js'
 
  
- app.use("/api/v1/users" , userRouter)
+ app.use("/api/v1/users/user" , userRouter)
+ 
+ app.use("/api/v1/users/parkings" , parkingRouter)
+
+
+ app.use("/api/v1/users/bookings" , bookingRouter)
  // http://localhost:8000/api/v1/users/register    
 
 

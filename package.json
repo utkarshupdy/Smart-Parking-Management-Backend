@@ -32,6 +32,7 @@
     "joi": "^17.13.3",
     "mogodb": "^0.0.1-security",
     "mongodb": "^6.9.0",
-    "mongoose": "^8.7.1"
+    "mongoose": "^8.7.1",
+    "node-cron": "^3.0.3"
   }
 }

@@ -21,8 +21,19 @@ const parkingSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    lots: [{ type: mongoose.Schema.Types.ObjectId, ref: 'ParkingLot' }]
+    capacity: {
+        type: Number,
+        required: true
+    },
+    user: {  // Owner who created the parking location
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    lots: [{ 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'ParkingLot'  // Array of parking lots related to this parking location
+    }]
 });
 
-export default mongoose.model("Parking", parkingSchema);
-
+export default mongoose.model('Parking', parkingSchema);
