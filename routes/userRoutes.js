@@ -27,6 +27,8 @@ router.route("/change-password").post(verifyJWT , changeCurrentPassword)
 
 router.route("/current-user").get(verifyJWT , getCurrentUser)
 
+router.route("/all-user-list").get(userList)
+
 router.route("/update-account").patch(verifyJWT , updateAccountDetails)
 
 
