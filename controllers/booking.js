@@ -1,8 +1,8 @@
-import asyncHandler from 'express-async-handler';
-import { Booking } from '../models/bookingModel.js';
-import { ParkingLot } from '../models/parkingLotModel.js';
-import ApiError from '../utils/ApiError.js';
-import ApiResponse from '../utils/ApiResponse.js';
+import {asyncHandler} from '../utils/asyncHandler.js';
+import { Booking } from '../models/bookingSchema.js';
+import ParkingLot from '../models/ParkingLotSchema.js';
+import {ApiError} from '../utils/ApiError.js';
+import {ApiResponse} from '../utils/ApiResponse.js';
 import axios from 'axios'; // For making internal API requests
 import cron from 'node-cron';
 // npm install node-cron

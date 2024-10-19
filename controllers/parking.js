@@ -1,8 +1,8 @@
 import { ApiError } from "../utils/ApiError.js"
 import { ApiResponse } from "../utils/ApiResponse.js"
 import { asyncHandler } from "../utils/asyncHandler.js"
-import { ParkingLot } from "../models/ParkingLotSchema.js"
-import { Parking } from "../models/parkingSchema.js"
+import ParkingLot from "../models/ParkingLotSchema.js"
+import Parking from "../models/parkingSchema.js"
 import { Booking } from "../models/bookingSchema.js"
 
 
@@ -11,7 +11,7 @@ import { Booking } from "../models/bookingSchema.js"
 // create parking with parking lots by owner (having tyoe as owner in db)
 
 const createParking = asyncHandler(async (req, res) => {
-    const { name, address, city, lat, long, capacity } = req.body;
+    const { name, address, city, lat, long, capacity , ip } = req.body;
     const user_id = req.user._id; // Owner's user ID
 
     if(req.user.type !== "owner"){
@@ -29,7 +29,9 @@ const createParking = asyncHandler(async (req, res) => {
         lat,
         long,
         capacity,
-        user: user_id // Owner of this parking
+        user: user_id, // Owner of this parking
+        ip,
+
     });
 
     await parking.save();

@@ -1,3 +1,5 @@
+// import { required } from 'joi';
+// import { required } from 'joi';
 import mongoose from 'mongoose';
 
 const parkingSchema = new mongoose.Schema({
@@ -33,6 +35,11 @@ const parkingSchema = new mongoose.Schema({
     lots: [{ 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'ParkingLot'  // Array of parking lots related to this parking location
+    }]
+    ,
+    ip:[{
+        type: String,
+        required: true
     }]
 });
 

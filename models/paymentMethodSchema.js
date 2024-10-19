@@ -1,14 +1,36 @@
-import mongoose , { Schema}from 'mongoose'
+import mongoose from 'mongoose';
 
 const paymentMethodSchema = new mongoose.Schema({
-    cash: {
-        type: Boolean,
+    userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
         required: true
     },
-    interac: {
+    stripeToken: {
         type: String,
-    }
-})
+        required: true
+    },
+    cardBrand: {
+        type: String,
+        required: true
+    },
+    cardLast4: {
+        type: String,
+        required: true
+    },
+    expMonth: {
+        type: Number,
+        required: true
+    },
+    expYear: {
+        type: Number,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true
+    },
+}, { timestamps: true });
 
-
-export default PaymentMethod =  mongoose.model("PaymentMethod", paymentMethodSchema)
+const PaymentMethod = mongoose.model("PaymentMethod", paymentMethodSchema);
+export default PaymentMethod;
