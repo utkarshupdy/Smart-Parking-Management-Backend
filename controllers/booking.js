@@ -148,7 +148,7 @@ const getExistingBookingList = asyncHandler(async (req, res) => {
 // })
 // update booking function
 const updateBooking = asyncHandler(async (req, res) => {
-    
+
     const user_id = req.user._id;
     const type = req.user.type;
 
@@ -166,7 +166,6 @@ const updateBooking = asyncHandler(async (req, res) => {
     const prev_slot_end_time = new Date(booking.slot_end_time);
     const new_slot_end_time = new Date(new_slot_time);
 
-    // Calculate the additional amount based on the extended time
     const add_amount = ((new_slot_end_time - prev_slot_end_time) / 60000) * 0.5;
     const totalAmount = booking.price + add_amount;
 
